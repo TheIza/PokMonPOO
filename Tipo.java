@@ -1,4 +1,4 @@
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 public enum Tipo {
 	FUEGO,

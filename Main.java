@@ -1,4 +1,4 @@
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 import java.util.Scanner;
 
@@ -30,14 +30,14 @@ public class Main {
         for (int i = 0; i < 5; i++) {
 
             System.out.println();
-            System.out.println("Elige tu Pokemon (" + (i + 1) + "/5)");
+            System.out.println("Elige tu Pokmon (" + (i + 1) + "/5)");
 
-            for (int j = 0; j < combate.pokemonsDisponibles.size(); j++) {
+            for (int j = 0; j < combate.pokmonsDisponibles.size(); j++) {
 
                 System.out.println((j + 1) + ". "
-                        + combate.pokemonsDisponibles.get(j).getNombre()
+                        + combate.pokmonsDisponibles.get(j).getNombre()
                         + " - "
-                        + combate.pokemonsDisponibles.get(j).getTipo());
+                        + combate.pokmonsDisponibles.get(j).getTipo());
             }
 
             int opcion = 0;
@@ -45,14 +45,14 @@ public class Main {
 
             while (!valido) {
 
-                System.out.print("Pokemon: ");
+                System.out.print("Pokmon: ");
 
                 if (teclado.hasNextInt()) {
 
                     opcion = teclado.nextInt();
 
                     if (opcion >= 1
-                            && opcion <= combate.pokemonsDisponibles.size()) {
+                            && opcion <= combate.pokmonsDisponibles.size()) {
 
                         valido = true;
 
@@ -69,12 +69,12 @@ public class Main {
                 }
             }
 
-            Pokemon pokemonEscogido =
-                    combate.pokemonsDisponibles.get(opcion - 1);
+            PokMon pokmonEscogido =
+                    combate.pokmonsDisponibles.get(opcion - 1);
 
-            combate.entrenador1.añadirPokemon(pokemonEscogido);
+            combate.entrenador1.añadirPokmon(pokmonEscogido);
 
-            combate.pokemonsDisponibles.remove(pokemonEscogido);
+            combate.pokmonsDisponibles.remove(pokmonEscogido);
         }
 
 
@@ -89,14 +89,14 @@ public class Main {
         for (int i = 0; i < 5; i++) {
 
             System.out.println();
-            System.out.println("Elige tu Pokemon (" + (i + 1) + "/5)");
+            System.out.println("Elige tu Pokmon (" + (i + 1) + "/5)");
 
-            for (int j = 0; j < combate.pokemonsDisponibles.size(); j++) {
+            for (int j = 0; j < combate.pokmonsDisponibles.size(); j++) {
 
                 System.out.println((j + 1) + ". "
-                        + combate.pokemonsDisponibles.get(j).getNombre()
+                        + combate.pokmonsDisponibles.get(j).getNombre()
                         + " - "
-                        + combate.pokemonsDisponibles.get(j).getTipo());
+                        + combate.pokmonsDisponibles.get(j).getTipo());
             }
 
             int opcion = 0;
@@ -104,14 +104,14 @@ public class Main {
 
             while (!valido) {
 
-                System.out.print("Pokemon: ");
+                System.out.print("Pokmon: ");
 
                 if (teclado.hasNextInt()) {
 
                     opcion = teclado.nextInt();
 
                     if (opcion >= 1
-                            && opcion <= combate.pokemonsDisponibles.size()) {
+                            && opcion <= combate.pokmonsDisponibles.size()) {
 
                         valido = true;
 
@@ -128,12 +128,12 @@ public class Main {
                 }
             }
 
-            Pokemon pokemonEscogido =
-                    combate.pokemonsDisponibles.get(opcion - 1);
+            PokMon pokmonEscogido =
+                    combate.pokmonsDisponibles.get(opcion - 1);
 
-            combate.entrenador2.añadirPokemon(pokemonEscogido);
+            combate.entrenador2.añadirPokmon(pokmonEscogido);
 
-            combate.pokemonsDisponibles.remove(pokemonEscogido);
+            combate.pokmonsDisponibles.remove(pokmonEscogido);
         }
 
 
@@ -157,13 +157,13 @@ public class Main {
         combate.entrenador2.mostrarEquipo();
 
 
-        // POKEMON INICIALES
+        // POKMON INICIALES
 
         combate.pokEnt1 =
-                combate.entrenador1.getPokemonActual();
+                combate.entrenador1.getPokMonActual();
 
         combate.pokEnt2 =
-                combate.entrenador2.getPokemonActual();
+                combate.entrenador2.getPokMonActual();
 
 
         // INICIAR COMBATE

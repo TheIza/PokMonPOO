@@ -1,5 +1,5 @@
 
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 import java.util.ArrayList;
 

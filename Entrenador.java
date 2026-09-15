@@ -1,4 +1,4 @@
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,9 +9,9 @@ public class Entrenador {
 
     String nombre;
 
-    ArrayList<Pokemon> equipo = new ArrayList<>(6);
+    ArrayList<PokMon> equipo = new ArrayList<>(6);
 
-    Pokemon pokemonActual;
+    PokMon pokMonActual;
 
     public Entrenador(String nombre) {
         this.nombre = nombre;
@@ -33,45 +33,45 @@ public class Entrenador {
         this.nombre = nombre;
     }
 
-    public ArrayList<Pokemon> getEquipo() {
+    public ArrayList<PokMon> getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(ArrayList<Pokemon> equipo) {
+    public void setEquipo(ArrayList<PokMon> equipo) {
         this.equipo = equipo;
     }
 
-    public Pokemon getPokemonActual() {
-        return pokemonActual;
+    public PokMon getPokMonActual() {
+        return pokMonActual;
     }
 
-    public void setPokemonActual(Pokemon pokemonActual) {
-        this.pokemonActual = pokemonActual;
+    public void setPokActual(PokMon pokmonActual) {
+        this.pokMonActual = pokmonActual;
     }
 
-    public void añadirPokemon(Pokemon pok) {
+    public void añadirPokmon(PokMon pok) {
 
         equipo.add(pok);
 
-        if (pokemonActual == null) {
-            pokemonActual = pok;
+        if (pokMonActual == null) {
+            pokMonActual = pok;
         }
     }
 
-    public void quitarPokemon(Pokemon pok) {
+    public void quitarPokmon(PokMon pok) {
         equipo.remove(pok);
 
         if (!equipo.isEmpty()) {
-            pokemonActual = equipo.get(0);
+            pokMonActual = equipo.get(0);
         } else {
-            pokemonActual = null;
+            pokMonActual = null;
         }
     }
 
     public void cambiarPok() {
 
         System.out.println();
-        System.out.println("  LISTADO POKEMON ");
+        System.out.println("  LISTADO POKMON ");
         System.out.println("|--------0--------|");
 
         for (int i = 0; i < equipo.size(); i++) {
@@ -84,12 +84,12 @@ public class Entrenador {
 
         int opcion = numValido();
 
-        Pokemon pokemonEscogido = equipo.get(opcion - 1);
+        PokMon pokmonEscogido = equipo.get(opcion - 1);
 
         System.out.println("!!! YO TE ELIJO !!! ");
-        System.out.println("!!! -" + pokemonEscogido.getNombre() + "- !!!");
+        System.out.println("!!! -" + pokmonEscogido.getNombre() + "- !!!");
 
-        pokemonActual = pokemonEscogido;
+        pokMonActual = pokmonEscogido;
     }
 
     public void mostrarEquipo() {

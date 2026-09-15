@@ -1,9 +1,9 @@
 
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 import java.util.ArrayList;
 
-public class Pokemon {
+public class PokMon {
 
     String nombre;
 
@@ -23,7 +23,7 @@ public class Pokemon {
 
     Tipo tipo;
 
-    public Pokemon(String nombre, Tipo tipo) {
+    public PokMon(String nombre, Tipo tipo) {
 
         this.nombre = nombre;
 
@@ -143,7 +143,7 @@ public class Pokemon {
     }
 
 
-    public static void atacar(Pokemon pok1, Pokemon pok2, Movimiento mov) {
+    public static void atacar(PokMon pok1, PokMon pok2, Movimiento mov) {
 
         // pok1 ataca a pok2 con movimientos
 
@@ -208,7 +208,7 @@ public class Pokemon {
     }
 
 
-    public static void recibirDanio(Pokemon pok, int danio) {
+    public static void recibirDanio(PokMon pok, int danio) {
 
         pok.setVida(pok.getVida() - danio);
     }
@@ -227,9 +227,9 @@ public class Pokemon {
     }
 
 
-    public static boolean estaVivo(Pokemon pok) {
+    public static boolean estaVivo(PokMon pok) {
 
-        // comprueba vida pokemon, devuelve boolean
+        // comprueba vida PokMon, devuelve boolean
 
         if (pok.vida <= 0) {
 
@@ -244,7 +244,7 @@ public class Pokemon {
 
     // Este sistema de nivel es momentaneo, se ha de arreglar
 
-    public static void subirNivel(Pokemon pok) {
+    public static void subirNivel(PokMon pok) {
 
         // sube de nivel
 

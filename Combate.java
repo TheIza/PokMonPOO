@@ -1,4 +1,4 @@
-package PokemonBattlePOO;
+package PokMonBattlePOO;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,13 +11,13 @@ public class Combate {
 
     static Entrenador entrenador2;
 
-    static Pokemon pokEnt1;
+    static PokMon pokEnt1;
 
-    static Pokemon pokEnt2;
+    static PokMon pokEnt2;
 
     static Boolean finCombate = false;
 
-    ArrayList<Pokemon> pokemonsDisponibles = new ArrayList<>();
+    ArrayList<PokMon> pokmonsDisponibles = new ArrayList<>();
 
     public Combate() {
 
@@ -98,56 +98,56 @@ public class Combate {
         Movimiento.listaMovimientos.add(mov30);
 
 
-        // POKEMON
+        // POKMON
 
-        Pokemon pok1 = new Pokemon("Charmander", Tipo.FUEGO);
-        Pokemon pok2 = new Pokemon("Squirtle", Tipo.AGUA);
-        Pokemon pok3 = new Pokemon("Bulbasaur", Tipo.PLANTA);
-        Pokemon pok4 = new Pokemon("Pikachu", Tipo.ELECTRICO);
+        PokMon pok1 = new PokMon("Charmander", Tipo.FUEGO);
+        PokMon pok2 = new PokMon("Squirtle", Tipo.AGUA);
+        PokMon pok3 = new PokMon("Bulbasaur", Tipo.PLANTA);
+        PokMon pok4 = new PokMon("Pikachu", Tipo.ELECTRICO);
 
-        Pokemon pok5 = new Pokemon("Charizard", Tipo.FUEGO);
-        Pokemon pok6 = new Pokemon("Blastoise", Tipo.AGUA);
-        Pokemon pok7 = new Pokemon("Ivysaur", Tipo.PLANTA);
-        Pokemon pok8 = new Pokemon("Raichu", Tipo.ELECTRICO);
+        PokMon pok5 = new PokMon("Charizard", Tipo.FUEGO);
+        PokMon pok6 = new PokMon("Blastoise", Tipo.AGUA);
+        PokMon pok7 = new PokMon("Ivysaur", Tipo.PLANTA);
+        PokMon pok8 = new PokMon("Raichu", Tipo.ELECTRICO);
 
-        Pokemon pok9 = new Pokemon("Vulpix", Tipo.FUEGO);
-        Pokemon pok10 = new Pokemon("Psyduck", Tipo.AGUA);
-        Pokemon pok11 = new Pokemon("Oddish", Tipo.PLANTA);
-        Pokemon pok12 = new Pokemon("Magnemite", Tipo.ELECTRICO);
+        PokMon pok9 = new PokMon("Vulpix", Tipo.FUEGO);
+        PokMon pok10 = new PokMon("Psyduck", Tipo.AGUA);
+        PokMon pok11 = new PokMon("Oddish", Tipo.PLANTA);
+        PokMon pok12 = new PokMon("Magnemite", Tipo.ELECTRICO);
 
-        Pokemon pok13 = new Pokemon("Growlithe", Tipo.FUEGO);
-        Pokemon pok14 = new Pokemon("Poliwag", Tipo.AGUA);
-        Pokemon pok15 = new Pokemon("Chikorita", Tipo.PLANTA);
-        Pokemon pok16 = new Pokemon("Mareep", Tipo.ELECTRICO);
+        PokMon pok13 = new PokMon("Growlithe", Tipo.FUEGO);
+        PokMon pok14 = new PokMon("Poliwag", Tipo.AGUA);
+        PokMon pok15 = new PokMon("Chikorita", Tipo.PLANTA);
+        PokMon pok16 = new PokMon("Mareep", Tipo.ELECTRICO);
 
-        Pokemon pok17 = new Pokemon("Cyndaquil", Tipo.FUEGO);
-        Pokemon pok18 = new Pokemon("Totodile", Tipo.AGUA);
-        Pokemon pok19 = new Pokemon("Bellsprout", Tipo.PLANTA);
-        Pokemon pok20 = new Pokemon("Electabuzz", Tipo.ELECTRICO);
+        PokMon pok17 = new PokMon("Cyndaquil", Tipo.FUEGO);
+        PokMon pok18 = new PokMon("Totodile", Tipo.AGUA);
+        PokMon pok19 = new PokMon("Bellsprout", Tipo.PLANTA);
+        PokMon pok20 = new PokMon("Electabuzz", Tipo.ELECTRICO);
 
 
-        // POKEMON DISPONIBLES PARA ELEGIR
+        // POKMON DISPONIBLES PARA ELEGIR
 
-        pokemonsDisponibles.add(pok1);
-        pokemonsDisponibles.add(pok2);
-        pokemonsDisponibles.add(pok3);
-        pokemonsDisponibles.add(pok4);
-        pokemonsDisponibles.add(pok5);
-        pokemonsDisponibles.add(pok6);
-        pokemonsDisponibles.add(pok7);
-        pokemonsDisponibles.add(pok8);
-        pokemonsDisponibles.add(pok9);
-        pokemonsDisponibles.add(pok10);
-        pokemonsDisponibles.add(pok11);
-        pokemonsDisponibles.add(pok12);
-        pokemonsDisponibles.add(pok13);
-        pokemonsDisponibles.add(pok14);
-        pokemonsDisponibles.add(pok15);
-        pokemonsDisponibles.add(pok16);
-        pokemonsDisponibles.add(pok17);
-        pokemonsDisponibles.add(pok18);
-        pokemonsDisponibles.add(pok19);
-        pokemonsDisponibles.add(pok20);
+        pokmonsDisponibles.add(pok1);
+        pokmonsDisponibles.add(pok2);
+        pokmonsDisponibles.add(pok3);
+        pokmonsDisponibles.add(pok4);
+        pokmonsDisponibles.add(pok5);
+        pokmonsDisponibles.add(pok6);
+        pokmonsDisponibles.add(pok7);
+        pokmonsDisponibles.add(pok8);
+        pokmonsDisponibles.add(pok9);
+        pokmonsDisponibles.add(pok10);
+        pokmonsDisponibles.add(pok11);
+        pokmonsDisponibles.add(pok12);
+        pokmonsDisponibles.add(pok13);
+        pokmonsDisponibles.add(pok14);
+        pokmonsDisponibles.add(pok15);
+        pokmonsDisponibles.add(pok16);
+        pokmonsDisponibles.add(pok17);
+        pokmonsDisponibles.add(pok18);
+        pokmonsDisponibles.add(pok19);
+        pokmonsDisponibles.add(pok20);
 
 
         // POKEMON INICIALES
@@ -204,7 +204,7 @@ public class Combate {
 
                 // ATACA ENTRENADOR 1
 
-                Pokemon.atacar(pokEnt1, pokEnt2, mov1);
+                PokMon.atacar(pokEnt1, pokEnt2, mov1);
 
 
                 // COMPROBAR SI MUERE POKEMON 2
@@ -213,7 +213,7 @@ public class Combate {
 
                     System.out.println("Tu compañero se ha debilitado...");
 
-                    entrenador2.quitarPokemon(pokEnt2);
+                    entrenador2.quitarPokmon(pokEnt2);
 
                     if (entrenador2.getEquipo().isEmpty()) {
 
@@ -229,7 +229,7 @@ public class Combate {
 
                         entrenador2.cambiarPok();
 
-                        pokEnt2 = entrenador2.getPokemonActual();
+                        pokEnt2 = entrenador2.getPokMonActual();
                     }
                 }
 
@@ -240,7 +240,7 @@ public class Combate {
 
                     System.out.println();
 
-                    Pokemon.atacar(pokEnt2, pokEnt1, mov2);
+                    PokMon.atacar(pokEnt2, pokEnt1, mov2);
 
 
                     // COMPROBAR SI MUERE POKEMON 1
@@ -249,7 +249,7 @@ public class Combate {
 
                         System.out.println("Tu compañero se ha debilitado...");
 
-                        entrenador1.quitarPokemon(pokEnt1);
+                        entrenador1.quitarPokmon(pokEnt1);
 
                         if (entrenador1.getEquipo().isEmpty()) {
 
@@ -265,7 +265,7 @@ public class Combate {
 
                             entrenador1.cambiarPok();
 
-                            pokEnt1 = entrenador1.getPokemonActual();
+                            pokEnt1 = entrenador1.getPokMonActual();
                         }
                     }
                 }
@@ -298,7 +298,7 @@ public class Combate {
 
                 System.out.println("Con que contratacara "
                         + entrenador1.getNombre()
-                        + "?? Su pokemon es "
+                        + "?? Su pokmon es "
                         + pokEnt1.getNombre());
 
                 pokEnt1.mostrarMovimientos();
@@ -310,16 +310,16 @@ public class Combate {
 
                 // ATACA ENTRENADOR 2
 
-                Pokemon.atacar(pokEnt2, pokEnt1, mov1);
+                PokMon.atacar(pokEnt2, pokEnt1, mov1);
 
 
-                // COMPROBAR SI MUERE POKEMON 1
+                // COMPROBAR SI MUERE POKMON 1
 
                 if (pokEnt1.getVida() <= 0) {
 
                     System.out.println("Tu compañero se ha debilitado...");
 
-                    entrenador1.quitarPokemon(pokEnt1);
+                    entrenador1.quitarPokmon(pokEnt1);
 
                     if (entrenador1.getEquipo().isEmpty()) {
 
@@ -335,7 +335,7 @@ public class Combate {
 
                         entrenador1.cambiarPok();
 
-                        pokEnt1 = entrenador1.getPokemonActual();
+                        pokEnt1 = entrenador1.getPokMonActual();
                     }
                 }
 
@@ -346,16 +346,16 @@ public class Combate {
 
                     System.out.println();
 
-                    Pokemon.atacar(pokEnt1, pokEnt2, mov2);
+                    PokMon.atacar(pokEnt1, pokEnt2, mov2);
 
 
-                    // COMPROBAR SI MUERE POKEMON 2
+                    // COMPROBAR SI MUERE POKMON 2
 
                     if (pokEnt2.getVida() <= 0) {
 
                         System.out.println("Tu compañero se ha debilitado...");
 
-                        entrenador2.quitarPokemon(pokEnt2);
+                        entrenador2.quitarPokmon(pokEnt2);
 
                         if (entrenador2.getEquipo().isEmpty()) {
 
@@ -371,7 +371,7 @@ public class Combate {
 
                             entrenador2.cambiarPok();
 
-                            pokEnt2 = entrenador2.getPokemonActual();
+                            pokEnt2 = entrenador2.getPokMonActual();
                         }
                     }
                 }
