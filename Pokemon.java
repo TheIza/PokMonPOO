@@ -7,8 +7,8 @@ public class Pokemon {
 
 	String nombre;
 	int nivel = 1;
-	int vida = 120;
-	int vidaMaxima = 120;
+	int vida = 300;
+	int vidaMaxima = 300;
 	int ataque = 20;
 	int defensa;
 	int velocidad;
@@ -19,7 +19,7 @@ public class Pokemon {
 
 		this.nombre = nombre;
 		this.defensa = (int) (Math.random() * 30) + 1;
-		this.velocidad = (int) (Math.random() * 30) + 1;;
+		this.velocidad = (int) (Math.random() * 30) + 1;
 		this.tipo = tipo;
 		anadirMovimientos();
 	}
@@ -173,7 +173,8 @@ public class Pokemon {
 		Tipo tipoPok1 = pok1.tipo;
 		Tipo tipoPok2 = pok2.tipo;
 		int ataque = pok1.ataque;
-
+		int precisionRandom =  (int) (Math.random() * mov.precision) + 1;
+		if (precisionRandom < mov.precision) {
 		
 		if(tipoPok1.equals("ELECTRICO")) {
 			ataque = ataque * 2;
@@ -185,10 +186,15 @@ public class Pokemon {
 			ataque = ataque * 2;
 		}
 		
+		ataque = ataque + mov.potencia;
 		pok2.setVida(pok2.getVida() - ataque);
 		System.out.println(pok2 + " -" + pok2.getVida());
-
-
+		} else {
+			System.out.println();
+			System.out.println(pok2.nombre + " a esquivado su ataque");
+			System.out.println();
+		}
+		
 		/*
 		 * 
 		 * 	FUEGO, -> PLANTA
@@ -201,9 +207,19 @@ public class Pokemon {
 		System.out.println();
 	}
 
-	public static void recibirDanio(Pokemon pok) {
-		// pok recibe daño pasivo por envenenamiento, fuego o otros modos
-
+	public static void recibirDanio(Pokemon pok, int danio) {
+		pok.setVida(pok.getVida() - danio);
+		
+	}
+	
+	public static void mostrarMovimientos(){
+	
+		System.out.println();
+		System.out.println("- - - Movimientos - - -");
+		for(int i = 0; i < movimientos.size(); i++) {
+			
+			System.out.println((i+1)+ ". "+ movimientos.get(i).nombre);
+		}
 	}
 
 	public static boolean estaVivo(Pokemon pok) {
@@ -216,6 +232,8 @@ public class Pokemon {
 		}
 	}
 
+	
+	//Este sistema de nivel es momentaneo, se ha de arreglar
 	public static void subirNivel(Pokemon pok) {
 		// sube de nivel
 		pok.nivel++;

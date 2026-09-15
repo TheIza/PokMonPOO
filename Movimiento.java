@@ -20,11 +20,11 @@ public class Movimiento {
 	public static void iniciarMovimientos() {
 
 	    Movimiento mov1 = new Movimiento("Ascuas", Tipo.FUEGO, 40, 100);
-	    Movimiento mov2 = new Movimiento("Lanzallamas", Tipo.FUEGO, 90, 100);
+	    Movimiento mov2 = new Movimiento("Lanzallamas", Tipo.FUEGO, 40, 100);
 	    Movimiento mov3 = new Movimiento("Nitrocarga", Tipo.FUEGO, 50, 100);
 	    Movimiento mov4 = new Movimiento("Colmillo Igneo", Tipo.FUEGO, 65, 95);
 	    Movimiento mov5 = new Movimiento("Giro Fuego", Tipo.FUEGO, 35, 100);
-	    Movimiento mov6 = new Movimiento("Envite Igneo", Tipo.FUEGO, 120, 85);
+	    Movimiento mov6 = new Movimiento("Envite Igneo", Tipo.FUEGO, 100, 85);
 	    Movimiento mov7 = new Movimiento("Llamarada", Tipo.FUEGO, 110, 85);
 	    Movimiento mov8 = new Movimiento("Puño Fuego", Tipo.FUEGO, 75, 100);
 
