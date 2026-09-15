@@ -8,12 +8,87 @@ public class Entrenador {
 
 	String nombre;
 	static ArrayList<Pokemon> equipo = new ArrayList<>(6);
-	static Pokemon pokemonActual;
+	static Pokemon pokemonActual = equipo.getFirst();
 
-	public Entrenador(String nombre, ArrayList<Pokemon> equipo) {
+	public Entrenador(String nombre) {
 		this.nombre = nombre;
+	}
+
+
+	
+	
+	
+	
+	public static Scanner getTeclado() {
+		return teclado;
+	}
+
+
+
+
+
+
+	public static void setTeclado(Scanner teclado) {
+		Entrenador.teclado = teclado;
+	}
+
+
+
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+
+
+
+	public static ArrayList<Pokemon> getEquipo() {
+		return equipo;
+	}
+
+
+
+
+
+
+	public static void setEquipo(ArrayList<Pokemon> equipo) {
 		Entrenador.equipo = equipo;
 	}
+
+
+
+
+
+
+	public Pokemon getPokemonActual() {
+		return pokemonActual;
+	}
+
+
+
+
+
+
+	public static void setPokemonActual(Pokemon pokemonActual) {
+		Entrenador.pokemonActual = pokemonActual;
+	}
+
+
+
+
 
 
 	public static void añadirPokemon(Pokemon pok) {
