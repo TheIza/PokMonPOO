@@ -4,165 +4,133 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Entrenador {
-	static Scanner teclado = new Scanner(System.in);
 
-	String nombre;
-	static ArrayList<Pokemon> equipo = new ArrayList<>(6);
-	static Pokemon pokemonActual = equipo.getFirst();
+    static Scanner teclado = new Scanner(System.in);
 
-	public Entrenador(String nombre) {
-		this.nombre = nombre;
-	}
+    String nombre;
 
+    ArrayList<Pokemon> equipo = new ArrayList<>(6);
 
+    Pokemon pokemonActual;
 
+    public Entrenador(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public static Scanner getTeclado() {
+        return teclado;
+    }
 
+    public static void setTeclado(Scanner teclado) {
+        Entrenador.teclado = teclado;
+    }
 
-	public static Scanner getTeclado() {
-		return teclado;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public ArrayList<Pokemon> getEquipo() {
+        return equipo;
+    }
 
+    public void setEquipo(ArrayList<Pokemon> equipo) {
+        this.equipo = equipo;
+    }
 
+    public Pokemon getPokemonActual() {
+        return pokemonActual;
+    }
 
+    public void setPokemonActual(Pokemon pokemonActual) {
+        this.pokemonActual = pokemonActual;
+    }
 
-	public static void setTeclado(Scanner teclado) {
-		Entrenador.teclado = teclado;
-	}
+    public void añadirPokemon(Pokemon pok) {
 
+        equipo.add(pok);
 
+        if (pokemonActual == null) {
+            pokemonActual = pok;
+        }
+    }
 
+    public void quitarPokemon(Pokemon pok) {
+        equipo.remove(pok);
 
+        if (!equipo.isEmpty()) {
+            pokemonActual = equipo.get(0);
+        } else {
+            pokemonActual = null;
+        }
+    }
 
+    public void cambiarPok() {
 
-	public String getNombre() {
-		return nombre;
-	}
+        System.out.println();
+        System.out.println("  LISTADO POKEMON ");
+        System.out.println("|--------0--------|");
 
+        for (int i = 0; i < equipo.size(); i++) {
+            System.out.println((i + 1) + ". " + equipo.get(i).getNombre());
+        }
 
+        System.out.println();
 
+        System.out.print("A quien quieres sacar? ");
 
+        int opcion = numValido();
 
+        Pokemon pokemonEscogido = equipo.get(opcion - 1);
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+        System.out.println("!!! YO TE ELIJO !!! ");
+        System.out.println("!!! -" + pokemonEscogido.getNombre() + "- !!!");
 
+        pokemonActual = pokemonEscogido;
+    }
 
+    public void mostrarEquipo() {
 
+        System.out.println();
+        System.out.println("- - - EQUIPO - - -");
 
+        for (int i = 0; i < equipo.size(); i++) {
+            System.out.println(" -" + equipo.get(i).getNombre());
+        }
 
+        System.out.println();
+    }
 
-	public static ArrayList<Pokemon> getEquipo() {
-		return equipo;
-	}
+    public static int numValido() {
 
+        boolean fin = false;
 
+        int menu = 0;
 
+        while (!fin) {
 
+            String menu_str = teclado.next();
 
+            int menu_str1 = (int) menu_str.charAt(0);
 
-	public static void setEquipo(ArrayList<Pokemon> equipo) {
-		Entrenador.equipo = equipo;
-	}
+            if (menu_str1 > 47 && menu_str1 < 55) {
 
+                menu = menu_str1 - 48;
+            }
 
+            if (menu == 0) {
 
+                System.out.println("Opcion invalida...");
 
+            } else {
 
+                fin = true;
+            }
+        }
 
-	public Pokemon getPokemonActual() {
-		return pokemonActual;
-	}
-
-
-
-
-
-
-	public static void setPokemonActual(Pokemon pokemonActual) {
-		Entrenador.pokemonActual = pokemonActual;
-	}
-
-
-
-
-
-
-	public static void añadirPokemon(Pokemon pok) {
-
-		equipo.add(pok);
-
-	}
-
-	public static void quitarpokemon(Pokemon pok) {
-
-		equipo.remove(pok);
-
-	}
-
-	public static void cambiarPok() {	
-
-		System.out.println("  LISTADO POKEMON " + 
-						   "|--------0--------|");
-		for(int i = 0; i < equipo.size(); i++) {
-			System.out.println((i+1) + ". " + equipo.get(i).nombre);
-		}
-
-		System.out.println();
-		System.out.print("A quien quieres sacar? ");
-		int opcion = numValido();
-
-		System.out.println("!!! YO TE ELIJO !!! ");
-		Pokemon pokemonEscogido = equipo.get(opcion);
-		System.out.println( "!!! -" + pokemonEscogido.nombre + "- !!!");
-		Entrenador.pokemonActual = pokemonEscogido;
-
-	}
-
-	public static void mostrarEquipo(){
-
-		System.out.println();
-		System.out.println("- - - EQUIPO - - -");
-
-		for(int i = 0; i < equipo.size(); i++) {
-			System.out.println( (i+1) + ". " + equipo.get(i).nombre);
-		}
-		System.out.println();
-
-	}
-
-
-	public static int numValido() {
-		boolean fin = false;
-		// valor predeterminado de menu (saltaria el DEFAULT del switch)
-		int menu = 0;
-		while(!fin) {
-			// recogemos la opcion por string
-			String menu_str = teclado.next();
-			// la pasamos a numero gracias al codigo ascii
-			int menu_str1 = (int) menu_str.charAt(0);
-
-			// miramos si esta entre 47 y 58 , que son los numeros 0-9 pero en ascii
-			if (menu_str1 > 47 && menu_str1 < 55) {
-				// volvemos a traducir si es un numero
-				menu = menu_str1-48;
-			} 
-
-			if(menu == 0) {
-				System.out.println("Opcion invalida...");
-			} else {
-				fin = true;
-			}
-
-		}
-		return(menu);
-
-
-
-
-	}
-
+        return menu;
+    }
 }
